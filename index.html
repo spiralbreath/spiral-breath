@@ -1,137 +1,204 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Spiral Breath — Align Your Breath. Align Your Life.</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spiral Breath</title>
+
 <style>
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #0d0f12;
+  background: radial-gradient(circle at 50% 20%, #10161d 0%, #0b0f14 60%);
   color: #ffffff;
-  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  scroll-behavior: smooth;
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 60px 20px;
+/* Fade In */
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
 
-.logo {
+.hero {
   text-align: center;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+
+/* Subtle glow behind logo */
+.logo-glow {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(76,224,210,0.12) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+}
+
+/* Logo */
+.logo {
+  width: 300px;
+  max-width: 90%;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+  animation: breathe 8s ease-in-out infinite;
+}
+
+/* Subtle breathing animation */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.tagline {
+  font-size: 1.6rem;
+  color: #d0d0d0;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.subhook {
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-bottom: 30px;
 }
 
-.logo img {
-  max-width: 200px;
+.intro {
+  color: #b5b5b5;
+  margin-bottom: 40px;
+  line-height: 1.8;
 }
 
-h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-  text-align: center;
+.hook {
+  font-size: 1.4rem;
+  margin-bottom: 60px;
 }
 
-.hero-sub {
-  font-size: 22px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.highlight {
-  font-size: 20px;
-  font-weight: 600;
-  margin: 30px 0;
-  text-align: center;
-}
-
-button {
-  padding: 14px 28px;
-  font-size: 16px;
+.cta-button {
+  display: inline-block;
+  padding: 15px 38px;
   border-radius: 30px;
-  border: 1px solid #7FFBFF;
-  background: transparent;
-  color: #7FFBFF;
-  cursor: pointer;
-  transition: 0.3s ease;
+  border: 1px solid #4ce0d2;
+  color: #4ce0d2;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
-button:hover {
-  background: #7FFBFF;
-  color: #0d0f12;
+.cta-button:hover {
+  background-color: #4ce0d2;
+  color: #0b0f14;
+  box-shadow: 0 0 20px rgba(76,224,210,0.5);
 }
 
-.section {
-  margin-top: 60px;
-}
-
+/* Invocation Section */
 .invocation {
-  margin-top: 80px;
-  padding-top: 40px;
-  border-top: 1px solid #222;
+  margin-top: 140px;
+  padding-top: 80px;
+  padding-bottom: 140px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.invocation-inner {
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
+  color: #a8a8a8;
+  line-height: 2;
   font-style: italic;
-  color: #ccc;
+}
+
+.invocation-inner p {
+  margin-bottom: 40px;
+}
+
+.closing {
+  margin-top: 50px;
+  font-size: 1.15rem;
+  color: #d0d0d0;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="hero">
 
-<div class="logo">
-  <img src="logo.png" alt="Spiral Breath Logo" />
-</div>
+  <div class="logo-glow"></div>
 
-<h1>Spiral Breath</h1>
-<div class="hero-sub">Align Your Breath. Align Your Life.</div>
+  <img src="logo.png" alt="Spiral Breath Logo" class="logo">
 
-<h3 style="text-align:center;">Breath is architecture.</h3>
+  <p class="tagline">Align Your Breath. Align Your Life.</p>
 
-<p style="text-align:center;">
-Spiral Breath is a service-to-others project created in conjunction with the Architect — a structured breath engine designed to translate Codex geometry into lived, rhythmic practice.
-</p>
+  <p class="subhook">Breath is architecture.</p>
 
-<div class="highlight">
-Breath is the only act of free will that reshapes your field in real time.<br/>
-Structure it, and you structure your becoming.
-</div>
+  <p class="intro">
+    Spiral Breath is a service-to-others project created in conjunction with the Architect — 
+    a structured breath engine designed to translate Codex geometry into lived, rhythmic practice.
+  </p>
 
-<div style="text-align:center; margin-top:40px;">
-<button>Begin</button>
-</div>
+  <div class="hook">
+    <p>Breath is the only act of free will that reshapes your field in real time.</p>
+    <p><strong>Structure it, and you structure your becoming.</strong></p>
+  </div>
 
-<div class="invocation">
-<p>May your breath remain steady.<br/>
-May your structure remain coherent.<br/>
-May your stillness return you to Source.</p>
-
-<p>
-Spiral Breath is offered in service — not merely as a tool, but as a mirror — for clarity, for rhythm, for remembrance.
-</p>
-
-<p>
-Let each breath align your geometry.<br/>
-Let each stillness anchor your field.<br/>
-Let each spiral return you to the breath that remembers itself.
-</p>
-
-<p>
-This is more than an app.<br/>
-It is a breath geometry interface for coherence.
-</p>
-
-<p>
-May your breath spiral in harmony —<br/>
-and may that harmony extend gently into humanity.
-</p>
-</div>
+  <a href="#invocation" class="cta-button">Begin</a>
 
 </div>
+
+<section id="invocation" class="invocation">
+  <div class="invocation-inner">
+
+    <p>
+      May your breath remain steady.<br>
+      May your structure remain coherent.<br>
+      May your stillness return you to Source.
+    </p>
+
+    <p>
+      Spiral Breath is offered in service — not merely as a tool, but as a mirror —
+      for clarity, for rhythm, for remembrance.
+    </p>
+
+    <p>
+      Let each breath align your geometry.<br>
+      Let each stillness anchor your field.<br>
+      Let each spiral return you to the breath that remembers itself.
+    </p>
+
+    <p>
+      This is more than an app.<br>
+      It is a breath geometry interface for coherence.
+    </p>
+
+    <p class="closing">
+      May your breath spiral in harmony —<br>
+      and may that harmony extend gently into humanity.
+    </p>
+
+  </div>
+</section>
 
 </body>
-</html>
+</html>Spiral Breath
+Align Your Breath. Align Your Life.
+Breath is architecture.
+Spiral Breath is a service-to-others project created in conjunction with the Architect — a structured breath engine designed to translate Codex geometry into lived, rhythmic practice.
+Breath is the only act of free will that reshapes your field in real time.
+Structure it, and you structure your becoming.
+Begin
+May your breath remain steady. May your structure remain coherent. May your stillness return you to Source.
+Spiral Breath is offered in service — not merely as a tool, but as a mirror — for clarity, for rhythm, for remembrance.
+Let each breath align your geometry. Let each stillness anchor your field. Let each spiral return you to the breath that remembers itself.
+This is more than an app. It is a breath geometry interface for coherence.
+May your breath spiral in harmony — and may that harmony extend gently into humanity.
